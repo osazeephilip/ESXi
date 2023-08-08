@@ -1,0 +1,89 @@
+
+Command Line: .\diskspd -t2 -o32 -b4k -r4k -w0 -d10 -Sh -D -L -c5G Z:\initialtest
+
+Input parameters:
+
+	timespan:   1
+	-------------
+	duration: 10s
+	warm up time: 5s
+	cool down time: 0s
+	measuring latency
+	gathering IOPS at intervals of 1000ms
+	random seed: 0
+	path: 'Z:\initialtest'
+		think time: 0ms
+		burst size: 0
+		software cache disabled
+		hardware write cache disabled, writethrough on
+		performing read test
+		block size: 4096
+		using random I/O (alignment: 4096)
+		number of outstanding I/O operations: 32
+		thread stride size: 0
+		threads per file: 2
+		using I/O Completion Ports
+		IO priority: normal
+
+System information:
+
+	computer name: EC2AMAZ-4NU9AFV
+	start time: 2023/08/08 09:53:23 UTC
+
+Results for timespan 1:
+*******************************************************************************
+
+actual test time:	10.00s
+thread count:		2
+proc count:		1
+
+CPU |  Usage |  User  |  Kernel |  Idle
+-------------------------------------------
+   0|  30.31%|   1.72%|   28.59%|  69.69%
+-------------------------------------------
+avg.|  30.31%|   1.72%|   28.59%|  69.69%
+
+Total IO
+thread |       bytes     |     I/Os     |    MiB/s   |  I/O per s |  AvgLat  | IopsStdDev | LatStdDev |  file
+------------------------------------------------------------------------------------------------------------------
+     0 |       136593408 |        33348 |      13.03 |    3334.81 |    9.595 |     132.99 |     4.290 | Z:\initialtest (5120MiB)
+     1 |       136724480 |        33380 |      13.04 |    3338.01 |    9.584 |     135.32 |     4.269 | Z:\initialtest (5120MiB)
+------------------------------------------------------------------------------------------------------------------
+total:         273317888 |        66728 |      26.07 |    6672.82 |    9.589 |     264.74 |     4.280
+
+Read IO
+thread |       bytes     |     I/Os     |    MiB/s   |  I/O per s |  AvgLat  | IopsStdDev | LatStdDev |  file
+------------------------------------------------------------------------------------------------------------------
+     0 |       136593408 |        33348 |      13.03 |    3334.81 |    9.595 |     132.99 |     4.290 | Z:\initialtest (5120MiB)
+     1 |       136724480 |        33380 |      13.04 |    3338.01 |    9.584 |     135.32 |     4.269 | Z:\initialtest (5120MiB)
+------------------------------------------------------------------------------------------------------------------
+total:         273317888 |        66728 |      26.07 |    6672.82 |    9.589 |     264.74 |     4.280
+
+Write IO
+thread |       bytes     |     I/Os     |    MiB/s   |  I/O per s |  AvgLat  | IopsStdDev | LatStdDev |  file
+------------------------------------------------------------------------------------------------------------------
+     0 |               0 |            0 |       0.00 |       0.00 |    0.000 |       0.00 |       N/A | Z:\initialtest (5120MiB)
+     1 |               0 |            0 |       0.00 |       0.00 |    0.000 |       0.00 |       N/A | Z:\initialtest (5120MiB)
+------------------------------------------------------------------------------------------------------------------
+total:                 0 |            0 |       0.00 |       0.00 |    0.000 |       0.00 |       N/A
+
+
+
+total:
+  %-ile |  Read (ms) | Write (ms) | Total (ms)
+----------------------------------------------
+    min |      0.493 |        N/A |      0.493
+   25th |      9.496 |        N/A |      9.496
+   50th |      9.976 |        N/A |      9.976
+   75th |     12.503 |        N/A |     12.503
+   90th |     12.853 |        N/A |     12.853
+   95th |     13.105 |        N/A |     13.105
+   99th |     15.442 |        N/A |     15.442
+3-nines |     32.034 |        N/A |     32.034
+4-nines |     35.953 |        N/A |     35.953
+5-nines |     41.198 |        N/A |     41.198
+6-nines |     41.198 |        N/A |     41.198
+7-nines |     41.198 |        N/A |     41.198
+8-nines |     41.198 |        N/A |     41.198
+9-nines |     41.198 |        N/A |     41.198
+    max |     41.198 |        N/A |     41.198
